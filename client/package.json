@@ -31,5 +31,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://basic-express-react.herokuapp.com/:1330"
+  "proxy": "http://localhost:1330"
 }
