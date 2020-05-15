@@ -1,26 +1,24 @@
 import React from 'react';
 import './App.css';
-import HelloWorld from './HelloWorld'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import HelloWorld from './HelloWorld';
+import CatChaseMouse from './RenderProps';
+import {ChangingSquare, ChangingText} from './RenderProps2'
 
 function App() {
   return (
-    <HelloWorld/>
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
+    <Router>
+      <Route exact path='/'>
+        <HelloWorld/>
+      </Route>
+      <Route exact path='/cat'>
+        <CatChaseMouse/>
+      </Route>
+      <Route exact path='/colour-changer'>
+          <ChangingSquare/>
+          <ChangingText/>
+      </Route>
+    </Router>
   );
 }
 

@@ -1,7 +1,7 @@
 const path = require('path')
 const express = require('express');
 const app = express();
-const port = process.env.PORT;
+const port = process.env.PORT || 1330;
 
 app.get('/hello', (req, res) => {
     console.log('!!!!!!!!!!!!!')
