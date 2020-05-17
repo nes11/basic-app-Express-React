@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from 'react';
 
-const HelloWorld = () => {
-  const [ greeting, setGreeting ] = useState();
-  const [ input , setInput ] = useState('https://swapi.dev/api/films/1/');
+const StarWars = () => {
+  const [ result, setResult ] = useState();
+  const [ url , setUrl ] = useState('https://swapi.dev/api/films/1/');
   const [ handshake, setHandshake ] = useState();
-  // const [ input , setInput ] = useState();
 
   useEffect(() => {
-    fetchGreeting();
+    fetchStarWars();
   }, []);
 
-  const fetchGreeting = async() => {
+  const fetchStarWars = async() => {
     try {
-      const response = await fetch(input);
-      setGreeting(await response.json());
+      const response = await fetch(url);
+      setResult(await response.json());
     } catch(error) {
       console.log(error)
     }
@@ -22,7 +21,6 @@ const HelloWorld = () => {
   const nudgeBackend = async() => {
     try {
       const response = await fetch('/hello');
-      console.log(999999, response)
       setHandshake(await response.text())
     } catch(error) {
       console.log(error)
@@ -33,13 +31,13 @@ const HelloWorld = () => {
   <>
     <button onClick={getBackendHandshake}>get handshake</button>
     <p>{handshake}</p>
-    <input type="text" value={input} onChange={(e) => setInput(e.target.value)}></input>
+    <input type="text" value={url} onChange={(e) => setUrl(e.target.value)}></input>
     <button onClick={getJson}>fetch</button>
-    <span>{JSON.stringify(greeting)}</span>
+    <span>{JSON.stringify(result)}</span>
   </>
   )
   async function getJson(e) {
-    await fetchGreeting();
+    await fetchStarWars();
   }
 
   async function getBackendHandshake() {
@@ -47,7 +45,7 @@ const HelloWorld = () => {
   }
 };
 
-export default HelloWorld;
+export default StarWars;
 
 // const Loader = ({ url, component }) => {
 //   const [ data, setData ] = useState()

@@ -1,15 +1,19 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import HelloWorld from './HelloWorld';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import NavBar from './NavBar';
+import StarWars from './star-wars-api';
 import CatChaseMouse from './RenderProps';
 import {ChangingSquare, ChangingText} from './RenderProps2'
 
-function App() {
+const App = () => {
   return (
-    <Router>
-      <Route exact path='/'>
-        <HelloWorld/>
+    <Router >
+      <Route path='/'>
+        <NavBar/>
+      </Route>
+      <Route exact path='/star-wars'>
+        <StarWars/>
       </Route>
       <Route exact path='/cat'>
         <CatChaseMouse/>
