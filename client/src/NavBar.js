@@ -5,7 +5,7 @@ const NavBar = () => {
   return (
     <>
     <Link to='/cat'>Cat</Link>
-    <Link to='/colour-changer'>Colour changer</Link>
+    <Link to='/colour-changer'>Colour changer Link</Link>
     <Link to='/star-wars'>Star Wars API</Link>
     </>
   )
